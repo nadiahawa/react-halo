@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './views/Home';
 import Shop from './views/Shop';
-import Cart from './views/Cart';
-import Checkout from './views/Checkout'
+import Checkout from './views/Checkout';
+import Register from './views/Register';
+import { Cart } from './views/Cart';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Route children path ='/shop' element={<Shop />} />
       <Route children path ='/cart' element={<Cart />} />
       <Route children path ='/checkout' element={<Checkout />} />
+      <Route children path ='/register' element={<Register />} />
     </Routes>
     </React.Fragment>
   );

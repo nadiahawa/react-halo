@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { DataContext } from '../DataProvider'
+import '../css/Navbar.css'
 
 let Navbar = () => {
 
@@ -17,8 +18,8 @@ let Navbar = () => {
 
 
     return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand" href="#">Navbar</a>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a className="navbar-brand" href="#">HALO ONLINE</a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -41,6 +42,9 @@ let Navbar = () => {
         <li className="nav-item">
             <p className="nav-link m-0">{count}</p>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/Register"><button>Register/Login/Sign-Out</button></Link>
+      </li>
         <li>
             <button className="btn btn-sm btn-info" onClick={changeCounter}>{cart}</button>
         </li>

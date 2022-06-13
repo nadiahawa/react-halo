@@ -1,0 +1,30 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: darkslategray;
+
+}
+
+.card-img-top{
+    height: 210px;
+    width: 285.98px;
+}
+
+
+.card-link{
+    color: red;
+    font-weight: bold;
+}
+
+.card-title1{
+    font-weight: bolder;
+}
+
+.header{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.card{
+    margin-left: auto;
+    margin-right: auto;
+}

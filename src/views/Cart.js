@@ -1,9 +1,13 @@
+import React, { useContext } from 'react';
+import { CartContext } from './CartContext';
 
-
-let Cart = () => {
-    return (
-        <h1>This will be cart page</h1>
+export const Cart = () => {
+    const contextValue = useContext(CartContext);
+    return(
+        <div>
+            <span>Iems in Cart: 0</span>
+            <br />
+            <span>Total Price: 0 {contextValue}</span>
+        </div>
     )
 }
-
-export default Cart;

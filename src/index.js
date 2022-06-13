@@ -5,13 +5,35 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import ProviderLayer from './Provider';
+import { FirebaseAppProvider } from 'reactfire';
+import { initializeApp } from 'firebase/app'
+import { getAuth } from 'firebase/auth';
+import { Cart } from './views/Cart';
+import { CartProvider } from './views/CartContext';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAQO6uDhKJX2InTnyJiquFsAzb4NP-hLAY",
+  authDomain: "halo-flask-d94ce.firebaseapp.com",
+  projectId: "halo-flask-d94ce",
+  storageBucket: "halo-flask-d94ce.appspot.com",
+  messagingSenderId: "359620530878",
+  appId: "1:359620530878:web:f508f5c94942245bda84ef",
+  measurementId: "G-FXCCX17LYL"
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <ProviderLayer />
-    </BrowserRouter>
+<React.StrictMode>
+    {/* <FirebaseAppProvider firebaseConfig={firebaseConfig}> */}
+      <BrowserRouter>
+        <ProviderLayer />
+        <CartProvider />
+        <Cart />
+      </BrowserRouter>
+    {/* </FirebaseAppProvider> */}
   </React.StrictMode>
 );
 
