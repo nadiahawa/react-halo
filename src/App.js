@@ -7,6 +7,8 @@ import Shop from './views/Shop';
 import Checkout from './views/Checkout';
 import Register from './views/Register';
 import { Cart } from './views/Cart';
+import Dashboard from './views/Dashboard';
+import Login from './Login';
 
 
 function App() {
@@ -30,8 +32,36 @@ function App() {
       <Route children path ='/cart' element={<Cart />} />
       <Route children path ='/checkout' element={<Checkout />} />
       <Route children path ='/register' element={<Register />} />
+      <Route children path ='/dashboard' element={<Dashboard />} />
+      <Route children path ='/login' element={<Login />} />
     </Routes>
     </React.Fragment>
   );
 }
 export default App;
+
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <BrowserRouter>
+//         <div>
+//           <div className="header">
+//             <NavLink exact activeClassName="active" to="/">Home</NavLink>
+//             <NavLink activeClassName="active" to="/login">Login</NavLink><small>(Access without token only)</small>
+//             <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink><small>(Access with token only)</small>
+//           </div>
+//           <div className="content">
+//             <Switch>
+//               <Route exact path="/" component={Home} />
+//               <Route path="/login" component={Login} />
+//               <Route path="/dashboard" component={Dashboard} />
+//             </Switch>
+//           </div>
+//         </div>
+//       </BrowserRouter>
+//     </div>
+//   );
+// }
+ 
+// export default App;

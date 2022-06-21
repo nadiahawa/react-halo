@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useState } from 'react';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { DataContext } from "../DataProvider";
 import '../css/Shop.css';
 import { CartContext } from './CartContext';
@@ -8,7 +7,7 @@ import { CartContext } from './CartContext';
 
 let Shop = () => {
 
-    const {cart, setCart} = useContext(DataContext);
+    
 
     let getMainCharData = async () => {
         let data = await axios.get('http://127.0.0.1:5000/api/characters');
@@ -30,6 +29,8 @@ let Shop = () => {
 
     const [characters, setCharacters] = useState(() => { loadMainCharData(); });
 
+    const {cart, setCart} = useContext(DataContext);
+
 
 
     const addToCart = () => {
@@ -47,6 +48,7 @@ let Shop = () => {
             <div className='container'>
                 <div className='row justify-content-center'>
                     <h1 className='header'>Shop Halo Characters</h1>
+                    <h3>{cart}</h3>
                 </div>
 
 
@@ -61,7 +63,6 @@ let Shop = () => {
                             </div>
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">{affiliation}</li>
-                                <li className="list-group-item">{name}</li>
                             </ul>
                             <div className="card-body">
                                 <p className="card-link float-left" CartContext ={price}>${price}</p>

@@ -7,14 +7,15 @@ import '../css/Navbar.css'
 
 let Navbar = () => {
 
-  const {cart} = useContext(DataContext);
-
     const [count, setCount] = useState(0);
+
+
     const changeCounter = () => {
       console.log('current count' + count);
       setCount(count + 1);
     }
 
+    const {cart} = useContext(DataContext);
 
 
     return (
@@ -43,7 +44,7 @@ let Navbar = () => {
             <p className="nav-link m-0">{count}</p>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/Register"><button>Register/Login/Sign-Out</button></Link>
+          <Link className="nav-link" to="/Login"><button>Login</button></Link>
       </li>
         <li>
             <button className="btn btn-sm btn-info" onClick={changeCounter}>{cart}</button>

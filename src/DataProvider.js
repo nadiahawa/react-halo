@@ -1,8 +1,8 @@
 import { useState, createContext } from 'react';
 
 const DataProvider = props => {
-
-    const [cart, setCart] = useState();
+    
+    const [cart, setCart] = useState('View Cart');
 
     return (
         <DataContext.Provider value={{'cart': cart, 'setCart': setCart}}>
