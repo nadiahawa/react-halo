@@ -9,6 +9,9 @@ import Register from './views/Register';
 import { Cart } from './views/Cart';
 import Dashboard from './views/Dashboard';
 import Login from './Login';
+import Weapons from './views/Weapons';
+import Vehicles from './views/Vehicles';
+import Special from './views/Special';
 
 
 function App() {
@@ -26,9 +29,13 @@ function App() {
   return (
     <React.Fragment>
       <Navbar />
+      <h1>hello {window.name}</h1>
     <Routes>
       <Route children path ='/' element={<Home characters={characters} shuffleCharacters={shuffleCharacters} />} />
       <Route children path ='/shop' element={<Shop />} />
+      <Route children path ='/weapons' element={<Weapons />} />
+      <Route children path ='/vehicles' element={<Vehicles />} />
+      <Route children path ='/special' element={<Special />} />
       <Route children path ='/cart' element={<Cart />} />
       <Route children path ='/checkout' element={<Checkout />} />
       <Route children path ='/register' element={<Register />} />

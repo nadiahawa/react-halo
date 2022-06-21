@@ -20,10 +20,9 @@ let Home = props => {
 
     return (
         <div className="container mt-2">
-            <p>Home</p>
             <div className='row'>
                 {console.log('hello nerds')}
-                <h1 className='characters'>{props.characters}</h1>
+                <h1 className='characters'>{props.characters}</h1>r
                 <button className='btn btn-sm btn-info' onClick={props.shuffleCharacters}>Shuffle Char</button>
             </div>
             <div className="row justify-content-center">

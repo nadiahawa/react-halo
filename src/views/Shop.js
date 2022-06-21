@@ -10,7 +10,7 @@ let Shop = () => {
     
 
     let getMainCharData = async () => {
-        let data = await axios.get('http://127.0.0.1:5000/api/characters');
+        let data = await axios.get('http://127.0.0.1:5000/api/weapons');
         return data.status === 200 ? data.data : null
     }
 
@@ -33,8 +33,9 @@ let Shop = () => {
 
 
 
-    const addToCart = () => {
-        console.log("clicked..");
+    const addToCart = async () => {
+        let data = await axios.get('http://127.0.0.1:5000/api/additem');
+        return data.status === 200 ? data.data : null;
         // let mutableCart = {...cart};
         // mutableCart.total += characters.price;
         // mutableCart.items[characters.id] ?
@@ -47,8 +48,7 @@ let Shop = () => {
     return (
             <div className='container'>
                 <div className='row justify-content-center'>
-                    <h1 className='header'>Shop Halo Characters</h1>
-                    <h3>{cart}</h3>
+                    <h1 className='header'>Shop Halo Weapons</h1>
                 </div>
 
 
@@ -116,4 +116,4 @@ let Shop = () => {
         )
     }
 
-export default Shop;
+export default Shop; 
