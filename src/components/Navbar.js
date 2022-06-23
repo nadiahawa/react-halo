@@ -29,6 +29,9 @@ let Navbar = () => {
       <li className="nav-item active">
         <Link className="nav-link" to="/">Home</Link>
       </li>
+      <li className="nav-item active">
+        <Link className="nav-link" to="/about">About</Link>
+      </li>
       <li className="nav-item">
       <div className="dropdown">
   <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,18 +52,18 @@ let Navbar = () => {
       <li className="nav-item">
           <Link className="nav-link" to="/Checkout">Checkout</Link>
       </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
             <p className="nav-link m-0">{count}</p>
-        </li>
+        </li> */}
         <li className="nav-item">
           <Link className="nav-link" to="/Register"><button>Register</button></Link>
       </li>
         <li className="nav-item">
           <Link className="nav-link" to="/Login"><button>Login</button></Link>
       </li>
-        <li>
+        {/* <li>
             <button className="btn btn-sm btn-info" onClick={changeCounter}>{cart}</button>
-        </li>
+        </li> */}
     </ul>
   </div>
 </nav>

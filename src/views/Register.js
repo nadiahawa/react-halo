@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from 'firebase/auth';
 import { auth } from '../index';
+import '../css/Register.css'
+
 
 function Register () {
     const [firstName, setFirstName] = useState(null);
@@ -13,8 +15,11 @@ function Register () {
     
 
     return (
-        <div className="form">
-          <div className="form-body">
+        <div className='container'>
+            <div className='row'>
+                <div className='mt-5 mr-4 col'>
+        <div className="bg-dark form w-50 h-80">
+          <div className="text-white w-50 h-80 border rounded border-dark form-body">
               <div className="username">
                   <label className="form__label" for="firstName">First Name </label>
                   <input className="form__input" type="text" id="firstName" placeholder="First Name"/>
@@ -28,7 +33,7 @@ function Register () {
                   <input  type="text" name="" id="username"  className="form__input"placeholder="Username"/>
               </div>
               <div className="email">
-                  <label className="form__label" for="email">Email </label>
+                  <label className="pd-4 form__label" for="email">Email </label>
                   <input  type="email" id="email" className="form__input" placeholder="Email"/>
               </div>
               <div className="password">
@@ -43,6 +48,9 @@ function Register () {
           <div className="footer">
               <button type="submit" className="btn btn-primary">Register</button>
           </div>
+      </div>
+      </div>
+      </div>
       </div>
     )
 };

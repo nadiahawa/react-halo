@@ -3,11 +3,15 @@ import { useState, useContext } from 'react';
 import { DataContext } from "../DataProvider";
 import '../css/Shop.css';
 import { CartContext } from './CartContext';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { GlobalVar } from "../context/GlobalVar";
 
 
 let Vehicles = () => {
 
-    
+    // const navigate = useNavigate();
+
+    // if (GlobalVar.username === 'test' && !window.location.href.endsWith('/login')) navigate('/login');
 
     let getVehicles = async () => {
         let data = await axios.get('http://127.0.0.1:5000/api/vehicles');
@@ -34,11 +38,12 @@ let Vehicles = () => {
 
 
     const addToCart = async (item_type, item) => {
-        console.log(item_type, item)
+        console.log(GlobalVar.cart)
         let data = await axios.post('http://127.0.0.1:5000/api/additem',
         {
+            method:'POST',
             item_type: item_type,
-            cart: cart,
+            cart: GlobalVar.cart,
             item: item
         });
         return data.status === 200 ? data.data : null;
@@ -47,18 +52,18 @@ let Vehicles = () => {
     return (
             <div className='container'>
                 <div className='row justify-content-center'>
-                    <h1 className='header'>Shop Halo Weapons</h1>
+                    <h1 className='header'>Shop Halo Vehicles</h1>
                 </div>
 
-
+                <div className="row">
                 {characters && characters.map(({ name, price, image, species, affiliation, quantity }) => (
-                    
-                    <div key={name} className='class="d-flex flex-row bd-highlight mb-3'>
+                    <div>
+                    <div className='col'></div>
+                    <div key={name} className='col'>
                         <div className="card m-3" style={{ width: 18 + 'rem' }}>
                             <img src={image} className="card-img-top" alt={species}></img>
                             <div className="card-body">
                                 <h5 className="card-title1">{name}</h5>
-                                <h6 className="card-title font-italic">{species}</h6>
                             </div>
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">{affiliation}</li>
@@ -70,11 +75,12 @@ let Vehicles = () => {
                             </div>
                         </div>
                     </div>
+                    </div>
                     
                     
                 ))}
 
-
+</div>
             </div>
         )
     }

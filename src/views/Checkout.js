@@ -1,8 +1,12 @@
 import axios from "axios";
 import { useState, useContext } from 'react';
 import { DataContext } from "../DataProvider";
+import '../css/Checkout.css'
+
 
 let Checkout = () => {
+
+    
     let getMainCharData = async () => {
         let data = await axios.get('http://127.0.0.1:5000/api/cart/items?id=1');
         return data.status === 200 ? data.data : null
@@ -28,27 +32,39 @@ let Checkout = () => {
 
 
     return (
+        <div>
             <div className='container'>
                 <div className='row justify-content-center'>
                     <h1 className='header'>Checkout</h1>
                 </div>
+                <div className='row'>
+                <div className='col border rounded border-info col m-4 text-black bg-info'>
+                    Items:
+                </div>
+                <div className='col border rounded border-info col m-4 text-black bg-info'>
+                    Type of Items:
+                </div>
+                </div>
 
-
-                {characters && characters.map(({ item, item_type, total_cost }) => (
-                    
-                    <div key={cart} className='class="d-flex flex-row bd-highlight mb-3'>
-                        <div className="card m-3" style={{ width: 18 + 'rem' }}>
-                            <div className="card-body">
-                                <h5 className="card-title1">{item}</h5>
-                                <h6 className="card-title font-italic">{item_type}</h6>
-                                <h6 className="card-title font-italic">{total_cost}</h6>
-                            </div>
+                    <div>
+                            {characters && characters.map(({ item, total_cost, item_type }) => (
+                        <div className='row'>
+                            <div className='col'>
+                                <h4 className=' text-center border rounded bg-light items'>{item}</h4>
                         </div>
+                        <div className='col'>
+                            <h className=' border rounded bg-light items'>{item_type}</h>
+                                <h2 className=' bg-success total'>{total_cost}</h2>
+                            </div>    
                     </div>
-                    
-                    
-                ))}
-
+                    ))}
+                
+                </div>
+                <div className='row'>
+                        <div id = 'Billing' className='border rounded border-info col m-4 text-white bg-dark'>Billing</div>
+                        <div id ='Payment' className='border rounded border-info col m-4 text-white bg-dark'>Payment Method</div>
+                        </div>
+            </div>
             </div>
         )
     }

@@ -3,15 +3,9 @@ import { useState, useContext } from 'react';
 import { DataContext } from "../DataProvider";
 import '../css/Shop.css';
 import { CartContext } from './CartContext';
-
+import { GlobalVar } from '../context/GlobalVar';
 
 let Special = () => {
-
-    const addToCart = async () => {
-        let data = await axios.get('http://127.0.0.1:5000/api/additem');
-        console.log('testing')
-        return data.status === 200 ? data.data : null;
-    }
 
     let getSpecialData = async () => {
         let data = await axios.get('http://127.0.0.1:5000/api/special');
@@ -30,6 +24,19 @@ let Special = () => {
 
     }
 
+    const addToCart = async (item_type, item) => {
+        console.log(GlobalVar.cart)
+        await axios.post('http://127.0.0.1:5000/api/additem',
+        {
+            method: 'POST',
+            item_type: item_type,
+            cart: GlobalVar.cart,
+            item: item
+        });
+        console.log('test')
+        // return data.status === 200 ? data.data : null;
+    }
+
 
     const [characters, setCharacters] = useState(() => { loadSpecial(); });
 
@@ -40,10 +47,10 @@ let Special = () => {
     return (
             <div className='container'>
                 <div className='row justify-content-center'>
-                    <h1 className='header'>Shop Halo Weapons</h1>
+                    <h1 className='header'>Shop Halo Special Items</h1>
                 </div>
 
-
+                <div className="row">
                 {characters && characters.map(({ name, price, image, species, affiliation, quantity }) => (
                     
                     <div key={name} className='class="d-flex flex-row bd-highlight mb-3'>
@@ -51,14 +58,13 @@ let Special = () => {
                             <img src={image} className="card-img-top" alt={species}></img>
                             <div className="card-body">
                                 <h5 className="card-title1">{name}</h5>
-                                <h6 className="card-title font-italic">{species}</h6>
                             </div>
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">{affiliation}</li>
                             </ul>
                             <div className="card-body">
                                 <p className="card-link float-left" CartContext ={price}>${price}</p>
-                                <button onClick={ addToCart() } className="float-right btn btn-sm btn-info">Add + </button>
+                                <button onClick={() => addToCart() } className="float-right btn btn-sm btn-info">Add + </button>
 
                             </div>
                         </div>
@@ -67,7 +73,7 @@ let Special = () => {
                     
                 ))}
 
-
+</div>
             </div>
         )
     }

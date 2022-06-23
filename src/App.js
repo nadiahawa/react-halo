@@ -12,12 +12,19 @@ import Login from './Login';
 import Weapons from './views/Weapons';
 import Vehicles from './views/Vehicles';
 import Special from './views/Special';
-
+import { GlobalVar } from './context/GlobalVar';
+import { Navigate, useNavigate } from 'react-router-dom';
+import About from './views/About';
 
 function App() {
 
+  // const navigate = useNavigate();
+
+  // if (GlobalVar.username === 'test' && !window.location.href.endsWith('/login')) navigate('/login');
+  //add flask message prompting them to sign in?
 
   const [characters, setCharacters] = useState(['MC', 'Johsnon', 'Arbiter']);
+  
 
   const shuffleCharacters = () => {
     console.log('char test')
@@ -25,11 +32,14 @@ function App() {
     tempCharacters.sort(() => Math.random() - 0.5);
     setCharacters(tempCharacters);
   }
+
+
   
+//need to get global variable in entire app to varify if there is a global variable so that only users can have carts
+
   return (
     <React.Fragment>
       <Navbar />
-      <h1>hello {window.name}</h1>
     <Routes>
       <Route children path ='/' element={<Home characters={characters} shuffleCharacters={shuffleCharacters} />} />
       <Route children path ='/shop' element={<Shop />} />
@@ -41,10 +51,14 @@ function App() {
       <Route children path ='/register' element={<Register />} />
       <Route children path ='/dashboard' element={<Dashboard />} />
       <Route children path ='/login' element={<Login />} />
+      <Route children path ='/about' element={<About />} />
     </Routes>
     </React.Fragment>
   );
 }
+
+// const AppwithRouter = withRouter(App);
+
 export default App;
 
 

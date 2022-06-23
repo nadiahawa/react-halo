@@ -3,10 +3,10 @@ import { useState, useContext } from 'react';
 import { DataContext } from "../DataProvider";
 import '../css/Shop.css';
 import { CartContext } from './CartContext';
-
+import { Navigate, useNavigate } from 'react-router-dom';
+import { GlobalVar } from "../context/GlobalVar";
 
 let Shop = () => {
-
     
 
     let getMainCharData = async () => {
@@ -36,13 +36,7 @@ let Shop = () => {
     const addToCart = async () => {
         let data = await axios.get('http://127.0.0.1:5000/api/additem');
         return data.status === 200 ? data.data : null;
-        // let mutableCart = {...cart};
-        // mutableCart.total += characters.price;
-        // mutableCart.items[characters.id] ?
-        // mutableCart.items[characters.id].quantity++:
-        // mutableCart.items[characters.id] = { 'obj': characters, 'quantity': 1 }
-        // console.log(mutableCart);
-        // setCart(mutableCart);
+
     }
 
     return (

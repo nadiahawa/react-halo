@@ -1,3 +1,10 @@
+*{
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgb(103, 141, 141);
+
+}
+
+
 .App {
   text-align: center;
 }
