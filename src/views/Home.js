@@ -9,10 +9,10 @@ let Home = props => {
 
     return (
         <div>
-            <img id = "home-main-image" src="https://i0.wp.com/xboxera.com/wp-content/uploads/2020/02/Ring.jpg?resize=780%2C470&ssl=1" className="rounded mx-auto d-block"></img>
+            <img id = "home-main-image" src="https://i0.wp.com/xboxera.com/wp-content/uploads/2020/02/Ring.jpg?resize=780%2C470ssl=1" className="rounded mx-auto d-block"></img>
                     <h1>Welcome to Halo Online!</h1>
                 <div className='container'>
-                <div className =' rounded row mt-5 ml-5'>
+                <div className ='rounded row mt-5 ml-5'>
 
                 <div id="carouselSlidesOnly" className="carousel slide" data-ride="carousel">
                     <ol className="bg-transparent carousel-indicators ">
@@ -33,7 +33,7 @@ let Home = props => {
                         </div>
                         <div className="carousel-item ">
                         <img className="rounded d-block" src="https://i.redd.it/6e16qh7arq521.jpg" alt="Shop Vehicles" />
-                        <div class="carousel-caption bg-transparent d-none d-md-block">
+                        <div className="carousel-caption bg-transparent d-none d-md-block">
                       <h5 className="carousel-captiony bg-transparent">Banshee</h5>
                       <a className="link" href="/Vehicles">
                       Shop Vehicles Items
@@ -42,7 +42,7 @@ let Home = props => {
                         </div>
                         <div className="carousel-item">
                         <img className="rounded d-block " src="https://i.redd.it/y4pahwhbmlv61.png" alt="Shop Weapons" />
-                        <div class="carousel-caption d-none d-md-block">
+                        <div className="carousel-caption d-none d-md-block">
                       <h5 className="carousel-captiony bg-transparent">Needler</h5>
                       <a className="link" href="/Weapons">
                       Shop Weapons Items
@@ -52,12 +52,12 @@ let Home = props => {
             
 
          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
           </a>
           <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
           </a>
           </div>
           </div>

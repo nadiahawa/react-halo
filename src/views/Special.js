@@ -47,7 +47,7 @@ let Special = () => {
     return (
             <div className='container'>
                 <div className='row justify-content-center'>
-                    <h1 className='header'>Shop Halo Special Items</h1>
+                    <h1 className='bg-dark text-white border header'>Shop Halo Special Items</h1>
                 </div>
 
                 <div className="row">
@@ -56,14 +56,14 @@ let Special = () => {
                     <div key={name} className='class="d-flex flex-row bd-highlight mb-3'>
                         <div className="card m-3" style={{ width: 18 + 'rem' }}>
                             <img src={image} className="card-img-top" alt={species}></img>
-                            <div className="card-body">
-                                <h5 className="card-title1">{name}</h5>
+                            <div className="bg-dark text-white card-body">
+                                <h5 className="bg-dark text-white card-title1">{name}</h5>
                             </div>
                             <ul className="list-group list-group-flush">
-                                <li className="list-group-item">{affiliation}</li>
+                                <li className="bg-secondary list-group-item">{affiliation}</li>
                             </ul>
-                            <div className="card-body">
-                                <p className="card-link float-left" CartContext ={price}>${price}</p>
+                            <div className="bg-dark card-body">
+                                <p className="bg-dark card-link float-left" CartContext ={price}>${price}</p>
                                 <button onClick={() => addToCart() } className="float-right btn btn-sm btn-info">Add + </button>
 
                             </div>

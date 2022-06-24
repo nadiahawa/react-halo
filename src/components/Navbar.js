@@ -27,14 +27,14 @@ let Navbar = () => {
   <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav">
       <li className="nav-item active">
-        <Link className="nav-link" to="/">Home</Link>
+        <Link className="font-weight-bold nav-link" to="/">Home</Link>
       </li>
       <li className="nav-item active">
-        <Link className="nav-link" to="/about">About</Link>
+        <Link className="font-weight-bold nav-link" to="/about">About</Link>
       </li>
       <li className="nav-item">
       <div className="dropdown">
-  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button className="font-weight-bold btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Shop
   </button>
   <div className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
@@ -47,19 +47,19 @@ let Navbar = () => {
     </ul>
     <ul className="navbar-nav ml-auto">
     <li className="nav-item">
-          <Link className="nav-link" to="/Cart">Cart</Link>
+          <Link className="font-weight-bold nav-link" to="/Cart">Cart</Link>
       </li>
       <li className="nav-item">
-          <Link className="nav-link" to="/Checkout">Checkout</Link>
+          <Link className="font-weight-bold nav-link" to="/Checkout">Checkout</Link>
       </li>
         {/* <li className="nav-item">
             <p className="nav-link m-0">{count}</p>
         </li> */}
         <li className="nav-item">
-          <Link className="nav-link" to="/Register"><button>Register</button></Link>
+          <Link className="nav-link" to="/Register"><button className='font-weight-bold bg-dark text-white'>Register</button></Link>
       </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/Login"><button>Login</button></Link>
+          <Link className="nav-link" to="/Login"><button className='font-weight-bold bg-dark text-white'>Login</button></Link>
       </li>
         {/* <li>
             <button className="btn btn-sm btn-info" onClick={changeCounter}>{cart}</button>

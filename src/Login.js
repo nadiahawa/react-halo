@@ -6,6 +6,7 @@ import { GlobalVar } from './context/GlobalVar';
 import Home from './views/Home';
 import { Navigate, useNavigate } from 'react-router-dom';
 
+
 function Login(props) {
   const [loading, setLoading] = useState(false);
   const username = useFormInput('');
@@ -43,6 +44,7 @@ function Login(props) {
  
   return (
     <div>
+      <img src="https://s3.amazonaws.com/prod-media.gameinformer.com/styles/body_default/s3/legacy-images/imagefeed/The%20Rise%20And%20Fall%20Of%20Cortana%20In%20Halo%204/Cortana610.jpg" className="rounded mx-auto d-block"></img>
       <div className='row justify-content-center m-5'>
         <div className='coljustify-content-center border rounded border-light p-2 text-white bg-dark'>
       Login<br /><br />
